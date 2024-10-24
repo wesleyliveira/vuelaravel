@@ -7,6 +7,7 @@ import '@fortawesome/fontawesome-free/js/all.js'
 
 import LoginComponent from './pages/Login/LoginComponent.vue'; 
 import HomeComponent from './pages/Home/HomeComponent.vue'; 
+import ClientsComponent from './pages/Clients/ClientsComponent.vue'; 
 import ProductsComponent from './pages/Products/ProductsComponent.vue'; 
 
 
@@ -16,7 +17,8 @@ Vue.use(VueRouter);
 const routes = [
   { path: '/', name: 'login', component: LoginComponent },
   { path: '/home', name: 'home', component: HomeComponent },
-  { path: '/produtos', name: 'products', component: ProductsComponent },
+  { path: '/clients', name: 'clients', component: ClientsComponent },
+  { path: '/products', name: 'products', component: ProductsComponent },
 ]
 
 const router = new VueRouter({

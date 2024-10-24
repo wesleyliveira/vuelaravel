@@ -1,24 +1,22 @@
 <template>
   <div class="lists">
     <div class="top">
-      <p><strong>Clientes</strong></p>
+      <p><strong>{{description}}</strong> <span class="badge badge-info">{{data.length}}</span></p>
     </div>
     <div class="content">
-      <table class="table table-striped">
+      <table class="table table-striped my_table">
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Nome</th>
-            <th scope="col">E-mail</th>
-            <th scope="col">Contato</th>
+            <th scope="col">{{columns[0]}}</th>
+            <th scope="col">{{columns[1]}}</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+          <tr v-for="user in data" :key="user.id">
+            <th scope="row"><p class="users">{{user.id}}</p></th>
+            <td><p class="users">{{user.name}}</p></td>
+            <td><p class="users">{{user.email}}</p></td>
           </tr>
         </tbody>
       </table>
@@ -29,7 +27,12 @@
 <script>
 export default {
     name: 'ListsComponent',
-}
+    props: {
+      data: Array,
+      description: String,
+      columns: {},
+    }
+  }
 </script>
 
 <style lang="scss" scoped>
@@ -39,5 +42,9 @@ export default {
   border: 1px solid #ccc;
   border-radius: 3px;
   background-color: #fff;
+
+  .users{
+    font-size: 12px;
+  }
 }
 </style>

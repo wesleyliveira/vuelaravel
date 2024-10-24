@@ -18,6 +18,11 @@
           >
         </li>
         <li>
+          <router-link :to="{ name: 'clients' }"
+            ><i class="fa fa-box icon"></i>Clientes</router-link
+          >
+        </li>
+        <li>
           <router-link :to="{ name: 'products' }"
             ><i class="fa fa-box icon"></i>Produtos</router-link
           >
